@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Time Password</title>
+    <title> One Time Password </title>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
     <style>
         body {
             background: lightblue; 
@@ -20,35 +20,32 @@
         a {
             font-size: 0.5em;
             color: maroon;
-            text-decoration: none; /* Remove default underline */
+            text-decoration: none;
         }
+  
     </style>
 </head>
-<body onload="generateOTP()">
-    <h1>Final Verification Step</h1>
-    <h2>Current OTP: <span id="otp"> _ _ _ _ _ _ </span> <a href="#" onclick="generateOTP()">New OTP</a></h2>
-    <button onclick="verifyOTP()">Enter the OTP as shown above</button>
+<body onload = "generateOTP()">
+    <h1> Final Verification Step </h1>
+    <h2> Current OTP: <span id="otp"> _ _ _ _ _ _ </span> <a href = "#" onclick = "generateOTP()"> New OTP </a> </h2>
+    <button onclick = "verifyOTP()"> Enter the OTP as shown above </button>
 
     <script>
         function generateOTP() {
-            // Generate a random 6-digit OTP
             var otp = Math.floor(100000 + Math.random() * 900000);
             document.getElementById('otp').textContent = otp;
         }
 
         function verifyOTP() {
-            // Prompt user to enter OTP
             var enteredOTP = prompt("Enter the OTP:");
 
-            // Get the current OTP displayed
             var currentOTP = document.getElementById('otp').textContent;
 
-            // Check if entered OTP matches the current OTP
             if (enteredOTP === currentOTP) {
-                // If correct, open a new window to a site of your choice
-                window.open("https://example.com"); // Replace "https://example.com" with the URL you want to open
-            } else {
-                // If incorrect, display an appropriate message
+                window.open("https://stock.adobe.com/ph/images/grunge-green-correct-square-rubber-seal-stamp-on-white-background/204767646"); 
+            } 
+            
+            else {
                 alert("Incorrect OTP! Please try again.");
             }
         }
