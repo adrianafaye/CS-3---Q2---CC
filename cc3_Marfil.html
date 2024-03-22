@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Challenge 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: lightseagreen;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        div {
+            background-color: white;
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 18px;
+            margin: 20px auto;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Name List</h1>
+
+    <table id="table"> 
+        <tr>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+        </tr>
+    </table>
+    
+    <div>
+        <label for="nameInput">Enter Name (First, Middle, Last):</label><br>
+        <input type="text" id="nameInput"><br>
+        <button onclick="addName()">Add Name</button>
+    </div>
+
+    <script>
+        function addName() {
+            // Get the input value
+            var fullName = document.getElementById('nameInput').value;
+
+            // Split the full name into parts
+            var nameParts = fullName.split(',');
+
+            // Create a new row for the table
+            var newRow = document.createElement('tr');
+
+            // Loop through name parts and add them as table cells
+            for (var i = 0; i < nameParts.length; i++) {
+                var cell = document.createElement('td');
+                cell.textContent = nameParts[i].trim(); // Trim any extra spaces
+                newRow.appendChild(cell);
+            }
+
+            // Append the new row to the table
+            document.getElementById('table').appendChild(newRow);
+
+            // Clear the input field
+            document.getElementById('nameInput').value = '';
+        }
+    </script>
+</body>
+</html>
