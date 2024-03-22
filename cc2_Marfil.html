@@ -29,25 +29,21 @@
     </div>
     <br>
     Red: <br>
-    <input id="red" type="range" min="0" max="255" value="255" step="1" onchange="ccolor();"> <br>
+    <input id = "red" type = "range" min = "0" max = "255" value = "255" step = "1" onchange = "ccolor();"> <br>
     Green: <br>
-    <input id="green" type="range" min="0" max="255" value="255" step="1" onchange="ccolor();"><br>
+    <input id = "green" type = "range" min = "0" max = "255" value = "255" step = "1" onchange = "ccolor();"> <br>
     Blue: <br>
-    <input id="blue" type="range" min="0" max="255" value="255" step="1" onchange="ccolor();">
+    <input id = "blue" type = "range" min = "0" max = "255" value = "255" step = "1" onchange = "ccolor();">
 
     <script>
-        // Function to update color and text
         function ccolor() {
-            // Get the values of red, green, and blue inputs
             var redValue = document.getElementById('red').value;
             var greenValue = document.getElementById('green').value;
             var blueValue = document.getElementById('blue').value;
-
-            // Update background color of the div
+            
             var colorDiv = document.getElementById('color');
             colorDiv.style.backgroundColor = 'rgb(' + redValue + ',' + greenValue + ',' + blueValue + ')';
 
-            // Update text shown in the div based on the current RGB value
             colorDiv.textContent = 'rgb(' + redValue + ', ' + greenValue + ', ' + blueValue + ')';
         }
     </script>
