@@ -12,34 +12,36 @@
             background-color:yellow;
             margin: 10px;
             padding: 5px;
-            cursor: pointer;
+            cursor: pointer; /* Adding cursor style to indicate clickable */
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to SRC Honesty Store!</h1>
+    <h1>SRC Honesty Store</h1>
     <div>
         <span onclick="totalP(50)">Burger - P50.00</span>
         <span onclick="totalP(30)">Fries - P30.00</span>
         <span onclick="totalP(20)">Juice - P20.00</span>
     </div>
 
-    <h4>Your current total is: </h4>
-    <h3 id="total">P0.00</h3>
+    <h4>The total payment is: </h4>
+    <h3 id="total">0</h3>
     <span onclick="clearP()">Clear</span>
 
     <script>
         let total = 0;
 
-        // Function to update total payment
+        // Function to update total payment and display it
         function totalP(price) {
             total += price;
-            document.getElementById('total').textContent = 'P' + total.toFixed(2);
+            document.getElementById('total').textContent = total.toFixed(2); // Displaying total with 2 decimal places
+        }
 
         // Function to clear total payment
         function clearP() {
             total = 0;
-            document.getElementById('total').textContent = 'P0.00';
+            document.getElementById('total').textContent = total.toFixed(2); // Displaying total with 2 decimal places
         }
     </script>
 </body>
+</html>
