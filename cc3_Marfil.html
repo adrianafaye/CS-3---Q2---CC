@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: lightseagreen;
+            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
         }
 
-        div {
-            background-color: white;
-            width: 300px;
-            height: 30px;
+        h1 {
             text-align: center;
-            line-height: 30px;
-            font-size: 18px;
-            margin: 20px auto;
-            border-radius: 5px;
-            border: 2px solid #ccc;
+        }
+
+        #container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         table {
@@ -30,7 +31,7 @@
         }
 
         th, td {
-            border: 1px solid black;
+            border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
@@ -50,22 +51,36 @@
         button:hover {
             background-color: #45a049;
         }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
-    <h1>Name List</h1>
+    <div id="container">
+        <h1>Name List</h1>
 
-    <table id="table"> 
-        <tr>
-            <th>First Name</th>
-            <th>Middle Name</th>
-            <th>Last Name</th>
-        </tr>
-    </table>
-    
-    <div>
-        <label for="nameInput">Enter Name (First, Middle, Last):</label><br>
-        <input type="text" id="nameInput"><br>
+        <table id="table"> 
+            <tr>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+            </tr>
+        </table>
+        
+        <label for="nameInput">Enter Name (First, Middle, Last):</label>
+        <input type="text" id="nameInput">
         <button onclick="addName()">Add Name</button>
     </div>
 
