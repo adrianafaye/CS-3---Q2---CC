@@ -5,19 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: lightseagreen;
+            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
         }
 
-        div {
+        #color {
             background-color: white;
             width: 300px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
+            height: 50px;
+            line-height: 50px;
             font-size: 18px;
             margin: 20px auto;
+            text-align: center;
             border-radius: 5px;
+            border: 2px solid #ccc;
+        }
+
+        input[type="range"] {
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        h1 {
+            text-align: center;
         }
     </style>
 </head>
@@ -25,14 +37,16 @@
     <h1>RGB Color Equivalent</h1>
 
     <div id="color">
-        rgb(255, 255, 255)
+        RGB(255, 255, 255)
     </div>
-    <br>
-    Red: <br>
-    <input id="red" type="range" min="0" max="255" value="255" step="1" onchange="ccolor();"> <br>
-    Green: <br>
+
+    <label for="red">Red:</label><br>
+    <input id="red" type="range" min="0" max="255" value="255" step="1" onchange="ccolor();"><br>
+
+    <label for="green">Green:</label><br>
     <input id="green" type="range" min="0" max="255" value="255" step="1" onchange="ccolor();"><br>
-    Blue: <br>
+
+    <label for="blue">Blue:</label><br>
     <input id="blue" type="range" min="0" max="255" value="255" step="1" onchange="ccolor();">
 
     <script>
@@ -48,7 +62,7 @@
             colorDiv.style.backgroundColor = 'rgb(' + redValue + ',' + greenValue + ',' + blueValue + ')';
 
             // Update text shown in the div based on the current RGB value
-            colorDiv.textContent = 'rgb(' + redValue + ', ' + greenValue + ', ' + blueValue + ')';
+            colorDiv.textContent = 'RGB(' + redValue + ', ' + greenValue + ', ' + blueValue + ')';
         }
     </script>
 </body>
