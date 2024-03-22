@@ -72,8 +72,11 @@
         </table>
         
         <label for = "nameInput"> Enter Name (First, Middle, Last): </label>
+       
         <input type = "text" id = "nameInput">
+        
         <button onclick = "addName()"> Add Name </button>
+   
     </div>
 
     <script>
@@ -81,12 +84,15 @@
             var fullName = document.getElementById('nameInput').value;
             var nameParts = fullName.split(',');
             var newRow = document.createElement('tr');
+           
             for (var i = 0; i < nameParts.length; i++) {
                 var cell = document.createElement('td');
                 cell.textContent = nameParts[i].trim();
                 newRow.appendChild(cell);
             }
+           
             document.querySelector('table').appendChild(newRow);
+           
             document.getElementById('nameInput').value = '';
         }
     </script>
