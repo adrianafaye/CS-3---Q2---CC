@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Coding Challenge 2</title>
+    <title> Coding Challenge 2 </title>
     <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
     <style>
         body {
@@ -20,14 +20,15 @@
             border-radius: 5px;
         }
     </style>
+    
 </head>
 <body>
-    <h1>RGB Color Equivalent</h1>
+    <h1> RGB Color Equivalent </h1>
 
     <div id = "color">
-        rgb(255, 255, 255)
+        RGB(255, 255, 255)
     </div>
-    <br>
+    
     Red: <br>
     <input id = "red" type = "range" min = "0" max = "255" value = "255" step = "1" onchange = "ccolor();"> <br>
     Green: <br>
@@ -40,10 +41,8 @@
             var redValue = document.getElementById('red').value;
             var greenValue = document.getElementById('green').value;
             var blueValue = document.getElementById('blue').value;
-            
             var colorDiv = document.getElementById('color');
-            colorDiv.style.backgroundColor = 'rgb(' + redValue + ',' + greenValue + ',' + blueValue + ')';
-
+            colorDiv.style.backgroundColor = 'RGB(' + redValue + ',' + greenValue + ',' + blueValue + ')';
             colorDiv.textContent = 'rgb(' + redValue + ', ' + greenValue + ', ' + blueValue + ')';
         }
     </script>
