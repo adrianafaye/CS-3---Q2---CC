@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Coding Challenge 5</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
     <style>
         body {
             background-color: lightseagreen;
@@ -32,32 +32,26 @@
 <body>
     <h1>Modified FLAMES</h1>
 
-    <button onclick="flames()">Match Names</button>
-    <h3 id="name"></h3>
+    <button onclick = "flames()">Match Names </button>
+    <h3 id = "name"> </h3>
 
-    <h4>FLAMES Result:</h4>
-    <h3 id="result"></h3>
+    <h4> FLAMES Result: </h4>
+    <h3 id = "result"> </h3>
 
     <script>
         function flames() {
-            // Get input names from user
             var name1 = prompt("Enter first name:");
             var name2 = prompt("Enter second name:");
 
-            // Display names
             document.getElementById('name').textContent = "Names: " + name1 + " and " + name2;
 
-            // Remove spaces and special characters, then convert to lowercase
             var filteredName1 = name1.replace(/[^a-zA-Z]/g, "").toLowerCase();
             var filteredName2 = name2.replace(/[^a-zA-Z]/g, "").toLowerCase();
 
-            // Calculate total characters in names
             var totalCharacters = filteredName1.length + filteredName2.length;
-
-            // Calculate FLAMES index
+           
             var flamesIndex = totalCharacters % 6;
 
-            // Determine FLAMES result
             var flamesResult;
             switch (flamesIndex) {
                 case 1:
@@ -80,7 +74,6 @@
                     break;
             }
 
-            // Display FLAMES result
             document.getElementById('result').textContent = "FLAMES Result: " + flamesResult;
         }
     </script>
